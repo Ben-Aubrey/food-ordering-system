@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1682423928 source:c:\users\user\downloads\pro\c-project\food-order\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+

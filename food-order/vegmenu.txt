@@ -1,11 +1,6 @@
-  1. Banku with fish                 ȼ40.00 
-  2. Fufu with Light Soup            ȼ50.00
-  3. Fried Rice and Chicken          ȼ60.00
-  4. Jollof Rice with Sauce          ȼ45.00
-  5. Beverages                       ȼ35.00
-  6. Veg. Thaali                     ȼ150.00  
-    -->Dal
-    -->Paneer  
-    -->Chapati
-    -->Rice
-    -->PapadBoadu
+  1. Banku with fish                 $40.00 
+  2. Fufu with Light Soup            $60.00
+  3. Fried Rice and Chicken          $60.00
+  4. Jollof Rice with Sauce          $45.00
+  5. Beverages                       $35.00
+  6. Veg. Stew                       $150.00  

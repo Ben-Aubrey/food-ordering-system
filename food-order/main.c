@@ -54,11 +54,11 @@ void mainMenu(void)          // Main Menu Function
 {
 	system("cls");
 	printf("                       **************************************************************************\n");
-	printf("                                                 FOOD ORDERING SYSTEM\n");
+	printf("                                                 WELCOME TO QWIK ORDER\n");
 	printf("                       **************************************************************************\n\n\n");
 	printf("          1. ADMINISTRATOR --> \n\n          2. CUSTOMER --> \n\n          3. EXIT --> \n\n\n             Enter Your Choice ---> ");
 	int choice;
-	scanf("%d",&choice);
+	scanf("%d", &choice);
 	if(choice==1)
 	{
 		checkPassword();
@@ -80,13 +80,13 @@ void administrator(void)          // Administrator Function
         printf("               *********************** HELLO ADMIN ******************************\n\n");
         printf("          1. Add New Record\n\n          2. Delete Record\n\n          3. Back To Main Menu \n\n             Enter Your Choice ---> ");
         int n;
-        scanf("%d",&n);
+        scanf("%d", &n);
 		printf("\n\n");
         int wait;
         //printf("In progress :");
         for(wait=0;wait<=10000;wait++)
         {
-            printf("\rIn progress : %d",wait/100);
+            printf("\rIn progress : %d", wait/100);
         }
         printf("\n\n");
         if(n==1)
@@ -139,10 +139,10 @@ void deleteRecord(void)          // Delete Record Function
     {
 	system("cls");
 	printf("                Enter Record ID To Delete: ");
-	scanf(" %d",&recordID);
+	scanf(" %d", &recordID);
 	fp=fopen("record1.txt","r+");
 	rewind(fp);
-	while(fread(&emp,sizeof(emp),1,fp)==1)
+	while(fread(&emp, sizeof(emp),1,fp)==1)
 	{
 	    if(emp.id==recordID)
 	    {
@@ -179,8 +179,8 @@ void deleteRecord(void)          // Delete Record Function
 			fclose(ft);
 			fclose(fp);
 			remove("record1.txt");
-			rename("test1.txt","record1.txt"); //copy all item from temporary file to fp except that
-			fp=fopen("record1.txt","r");    //we want to delete
+			rename("test1.txt", "record1.txt"); //copy all item from temporary file to fp except that
+			fp=fopen("record1.txt", "r");    //we want to delete
 			if(findRecord=='t')
 			{
 		    	printf("        RECORD SUCCESSFULLY DELETED!!!.\n\n");
@@ -217,14 +217,14 @@ void customer(void)          // Customer Function
 {
 	system("cls");
 	printf("                    *******************************************\n                                    FOOD MENU\n                    *******************************************\n\n");
-	printf("               1. Vegetarian\n\n               2. Non Vegetarian\n\n               3. Beverages\n\n               4. Back to Main Menu\n\n                    Enter Your Choice  --> ");
+	printf("               1. Vegetarian\n\n               2. Non-Vegetarian\n\n               3. Beverages\n\n               4. Back to Main Menu\n\n                    Enter Your Choice  --> ");
 	int k;
-	scanf("%d",&k);
+	scanf("%d", &k);
 		int load;
 	printf("In progress :");
 	for(load=0;load<=50000;load++)
 	{
-		printf("\rIn progress : %d",load/500);
+		printf("\rIn progress : %d", load/500);
 	}
 	if(k==1)
 	{
@@ -266,22 +266,22 @@ void vegetarian(void)          // Vegetarian Function
 	char v;
 	FILE *vmenu;
 
-    vmenu=fopen("vegmenu.txt","rt");
+    vmenu=fopen("vegmenu.txt" ,"rt");
 	while((v=getc(vmenu))!=EOF)
         {
         	printf("%c",v);
 		}
          fclose(vmenu);
     printf("\n\nEnter What You Want: ");
-	scanf("%d",&choice);
+	scanf("%d", &choice);
 	if(choice==1)
 	{
 		printf("Quantity:  ");
-		scanf("%d",&quantity);
+		scanf("%d", &quantity);
 		total = total + 40*(quantity);
 		printf("\n");
 		printf("          Press 1 To Order Again :\n          Press 2 To Get Your Total:\n\n          Enter Your Choice: ");
-		scanf("%d",&again);
+		scanf("%d", &again);
 		printf("\n");
 		if(again==1)
 		{
@@ -290,11 +290,11 @@ void vegetarian(void)          // Vegetarian Function
 		}
 		else if(again==2)
 		{
-			printf("          Your Total Amount Is : ø. %.2lf\n\n",total);
+			printf("          Your Total Amount Is : ø. %.2lf\n\n", total);
 			int totl = total;
 			FILE *ttl;
 			ttl = fopen("order.txt","a");
-			fprintf(ttl,"\nGrand Total : %d\n",totl);
+			fprintf(ttl,"\nGrand Total : %d\n", totl);
 			fclose(ttl);
 
 			details();
@@ -303,10 +303,10 @@ void vegetarian(void)          // Vegetarian Function
 	else if(choice==2)
 	{
 		printf("Quantity :");
-		scanf("%d",&quantity);
+		scanf("%d", &quantity);
 		total=total + 60*(quantity);
 		printf("          Press 1 To Order Again :\n          Press 2 To Get Your Total:\n\n          Enter Your Choice: ");
-		scanf("%d",&again);
+		scanf("%d", &again);
 		if(again==1)
 		{
 			printf("\n\n");
@@ -314,11 +314,11 @@ void vegetarian(void)          // Vegetarian Function
 		}
 		else if(again==2)
 		{
-			printf("         Your Total Amount Is: $. %.2lf\n\n",total);
+			printf("         Your Total Amount Is: $. %.2lf\n\n", total);
 			int totl = total;
 			FILE *ttl;
 			ttl = fopen("order.txt","a");
-			fprintf(ttl,"\nGrand Total: %d\n",totl);
+			fprintf(ttl,"\nGrand Total: %d\n", totl);
 			fclose(ttl);
 
 			details();
@@ -327,10 +327,10 @@ void vegetarian(void)          // Vegetarian Function
 	else if(choice==3)
 	{
 		printf("Quantity :  ");
-		scanf("%d",&quantity);
-		total=total + 45*(quantity);
+		scanf("%d", &quantity);
+		total=total + 60*(quantity);
 		printf("          Press 1 To Order Again :\n          Press 2 To Get Your Total:\n\n          Enter Your Choice: ");
-		scanf("%d",&again);
+		scanf("%d", &again);
 		if(again==1)
 		{
 			printf("\n\n");
@@ -338,11 +338,11 @@ void vegetarian(void)          // Vegetarian Function
 		}
 		else if(again==2)
 		{
-			printf("          Your Total Amount Is: $. %.2lf\n\n",total);
+			printf("          Your Total Amount Is: $. %.2lf\n\n", total);
 			int totl = total;
 			FILE *ttl;
 			ttl = fopen("order.txt","a");
-			fprintf(ttl,"\nGrand Total: %d\n",totl);
+			fprintf(ttl,"\nGrand Total: %d\n", totl);
 			fclose(ttl);
 
 			details();
@@ -351,7 +351,31 @@ void vegetarian(void)          // Vegetarian Function
 	else if(choice==4)
 	{
 		printf("Quantity :");
-		scanf("%d",&quantity);
+		scanf("%d", &quantity);
+		total=total + 45*(quantity);
+		printf("          Press 1 To Order Again :\n          Press 2 To Get Your Total:\n\n          Enter Your Choice: ");
+		scanf("%d", &again);
+		if(again==1)
+		{
+			printf("\n\n");
+			vegetarian();
+		}
+		else if(again==2)
+		{
+			printf("         Your Total Amount Is : $. %.2lf\n\n", total);
+			int totl = total;
+			FILE *ttl;
+			ttl = fopen("order.txt", "a");
+			fprintf(ttl,"\nGrand Total: %d\n", totl);
+			fclose(ttl);
+
+			details();
+		}
+	}
+	else if(choice==5)
+	{
+		printf("Quantity :");
+		scanf("%d", &quantity);
 		total=total + 35*(quantity);
 		printf("          Press 1 To Order Again :\n          Press 2 To Get Your Total:\n\n          Enter Your Choice: ");
 		scanf("%d",&again);
@@ -362,20 +386,21 @@ void vegetarian(void)          // Vegetarian Function
 		}
 		else if(again==2)
 		{
-			printf("         Your Total Amount Is : $. %.2lf\n\n",total);
+			printf("          Your Total Amount Is : $. %.2lf\n\n", total);
 			int totl = total;
 			FILE *ttl;
-			ttl = fopen("order.txt","a");
-			fprintf(ttl,"\nGrand Total: %d\n",totl);
+			ttl = fopen("order.txt", "a");
+			fprintf(ttl,"\nGrand Total: %d\n", totl);
 			fclose(ttl);
 
 			details();
 		}
+
 	}
-	else if(choice==5)
+	else if(choice==6)
 	{
 		printf("Quantity :");
-		scanf("%d",&quantity);
+		scanf("%d", &quantity);
 		total=total + 150*(quantity);
 		printf("          Press 1 To Order Again :\n          Press 2 To Get Your Total:\n\n          Enter Your Choice: ");
 		scanf("%d",&again);
@@ -386,18 +411,18 @@ void vegetarian(void)          // Vegetarian Function
 		}
 		else if(again==2)
 		{
-			printf("          Your Total Amount Is : $. %.2lf\n\n",total);
+			printf("          Your Total Amount Is : $. %.2lf\n\n", total);
 			int totl = total;
 			FILE *ttl;
-			ttl = fopen("order.txt","a");
-			fprintf(ttl,"\nGrand Total: %d\n",totl);
+			ttl = fopen("order.txt", "a");
+			fprintf(ttl,"\nGrand Total: %d\n", totl);
 			fclose(ttl);
 
 			details();
 		}
 
 	}
-	else if(choice==6)
+	else if(choice==7)
 	{
 		system("cls");
 	//	customer();
@@ -412,12 +437,10 @@ void vegetarian(void)          // Vegetarian Function
 
 void nonVegetarian(void)                    // Non Vegetarian Function
 {
-    int choice;
-	int again;
-	int quantity;
+    int choice, again, quantity;
 	double price=0;
 	printf("                                    **********************************************\n");
-	printf("                                                  Non Veg. Menu\n");
+	printf("                                                  Non-Veg. Menu\n");
 	printf("                                    **********************************************\n");
     //	Menu from Non Veg. is Displayed Here
 	char n;
@@ -425,18 +448,18 @@ void nonVegetarian(void)                    // Non Vegetarian Function
 	nmenu = fopen("nonveg.txt","rt");
 	while((n=getc(nmenu))!=EOF)
 	{
-		printf("%c",n);
+		printf("%c", n);
 	}
 	printf("\n\n       Enter What You Want: ");
-	scanf("%d",&choice);
+	scanf("%d", &choice);
 	if(choice==1)
 	{
-		printf("Quantity : ");
-		scanf(" %d",&quantity);
-		total=total + 100*(quantity);
+		printf("       Quantity : ");
+		scanf(" %d", &quantity);
+		total=total + 150*(quantity);
 		printf("\n");
 		printf("          Press 1 To Order Again :\n          Press 2 To Get Your Total:\n\n          Enter Your Choice: ");
-		scanf(" %d",&again);
+		scanf(" %d", &again);
 		if(again==1)
 		{
 			printf("\n\n");
@@ -444,23 +467,23 @@ void nonVegetarian(void)                    // Non Vegetarian Function
 		}
 		else if(again==2)
 		{
-			printf("         Your Total Amount Is: $%.2lf\n\n",total);
+			printf("         Your Total Amount Is: $%.2lf\n\n", total);
 			int totl = total;
 			FILE *ttl;
-			ttl = fopen("order.txt","a");
-			fprintf(ttl,"\nGrand Total: %d\n",totl);
+			ttl = fopen("order.txt", "a");
+			fprintf(ttl,"\nGrand Total: %d\n", totl);
 			fclose(ttl);
 			details();
 		}
 	}
 	else if(choice==2)
 	{
-		printf("Quantity :");
-		scanf(" %d",&quantity);
-		total=total + 120*(quantity);
+		printf("       Quantity :");
+		scanf(" %d", &quantity);
+		total=total + 200*(quantity);
 		printf("\n");
 		printf("          Press 1 To Order Again :\n          Press 2 To Get Your Total:\n\n          Enter Your Choice: ");
-		scanf(" %d",&again);
+		scanf(" %d", &again);
 		if(again==1)
 		{
 			printf("\n\n");
@@ -468,20 +491,20 @@ void nonVegetarian(void)                    // Non Vegetarian Function
 		}
 		else if(again==2)
 		{
-			printf("          Your Total Amount Is: $%.2lf\n\n",total);
+			printf("          Your Total Amount Is: $%.2lf\n\n", total);
 			int totl = total;
 			FILE *ttl;
-			ttl = fopen("order.txt","a");
-			fprintf(ttl,"\nGrand Total: %d\n",totl);
+			ttl = fopen("order.txt", "a");
+			fprintf(ttl,"\nGrand Total: %d\n", totl);
 			fclose(ttl);
 			details();
 		}
 	}
 	else if(choice==3)
 	{
-		printf("Quantity :");
-		scanf(" %d",&quantity);
-		total=total + 85*(quantity);
+		printf("       Quantity :");
+		scanf(" %d", &quantity);
+		total=total + 110*(quantity);
 		printf("\n");
 		printf("          Press 1 To Order Again :\n          Press 2 To Get Your Total:\n\n          Enter Your Choice: ");
 		scanf(" %d",&again);
@@ -492,23 +515,23 @@ void nonVegetarian(void)                    // Non Vegetarian Function
 		}
 		else if(again==2)
 		{
-			printf("          Your Total Amount Is: $%.2lf\n\n",total);
+			printf("          Your Total Amount Is: $%.2lf\n\n", total);
 			int totl = total;
 			FILE *ttl;
 			ttl = fopen("order.txt","a");
-			fprintf(ttl,"\nGrand Total: $%d\n",totl);
+			fprintf(ttl,"\nGrand Total: $%d\n", totl);
 			fclose(ttl);
 			details();
 		}
 	}
 	else if(choice==4)
 	{
-		printf("Quantity :");
-		scanf(" %d",&quantity);
-		total=total + 35*(quantity);
+		printf("       Quantity :");
+		scanf(" %d", &quantity);
+		total=total + 30*(quantity);
 		printf("\n");
 		printf("          Press 1 To Order Again :\n          Press 2 To Get Your Total:\n\n          Enter Your Choice: ");
-		scanf(" %d",&again);
+		scanf(" %d", &again);
 		if(again==1)
 		{
 			printf("\n\n");
@@ -516,16 +539,112 @@ void nonVegetarian(void)                    // Non Vegetarian Function
 		}
 		else if(again==2)
 		{
-			printf("          Your Total Amount Is: $%.2lf\n\n",total);
+			printf("          Your Total Amount Is: $%.2lf\n\n", total);
 			int totl = total;
 			FILE *ttl;
 			ttl = fopen("order.txt","a");
-			fprintf(ttl,"\nGrand Total: $%d\n",totl);
+			fprintf(ttl,"\nGrand Total: $%d\n", totl);
 			fclose(ttl);
 			details();
 		}
 	}
 	else if(choice==5)
+	{
+		printf("       Quantity :");
+		scanf(" %d", &quantity);
+		total=total + 20*(quantity);
+		printf("\n");
+		printf("          Press 1 To Order Again :\n          Press 2 To Get Your Total:\n\n          Enter Your Choice: ");
+		scanf(" %d", &again);
+		if(again==1)
+		{
+			printf("\n\n");
+			nonVegetarian();
+		}
+		else if(again==2)
+		{
+			printf("          Your Total Amount Is: $%.2lf\n\n", total);
+			int totl = total;
+			FILE *ttl;
+			ttl = fopen("order.txt","a");
+			fprintf(ttl,"\nGrand Total: $%d\n", totl);
+			fclose(ttl);
+			details();
+		}
+	}
+	else if(choice==6)
+	{
+		printf("       Quantity :");
+		scanf(" %d", &quantity);
+		total=total + 150*(quantity);
+		printf("\n");
+		printf("          Press 1 To Order Again :\n          Press 2 To Get Your Total:\n\n          Enter Your Choice: ");
+		scanf(" %d", &again);
+		if(again==1)
+		{
+			printf("\n\n");
+			nonVegetarian();
+		}
+		else if(again==2)
+		{
+			printf("          Your Total Amount Is: $%.2lf\n\n", total);
+			int totl = total;
+			FILE *ttl;
+			ttl = fopen("order.txt","a");
+			fprintf(ttl,"\nGrand Total: $%d\n", totl);
+			fclose(ttl);
+			details();
+		}
+	}
+	else if(choice==7)
+	{
+		printf("       Quantity :");
+		scanf(" %d", &quantity);
+		total=total + 300*(quantity);
+		printf("\n");
+		printf("          Press 1 To Order Again :\n          Press 2 To Get Your Total:\n\n          Enter Your Choice: ");
+		scanf(" %d", &again);
+		if(again==1)
+		{
+			printf("\n\n");
+			nonVegetarian();
+		}
+		else if(again==2)
+		{
+			printf("          Your Total Amount Is: $%.2lf\n\n", total);
+			int totl = total;
+			FILE *ttl;
+			ttl = fopen("order.txt","a");
+			fprintf(ttl,"\nGrand Total: $%d\n", totl);
+			fclose(ttl);
+			details();
+		}
+	}
+	else if(choice==8)
+	{
+		printf("       Quantity :");
+		scanf(" %d", &quantity);
+		total=total + 150*(quantity);
+		printf("\n");
+		printf("          Press 1 To Order Again :\n          Press 2 To Get Your Total:\n\n          Enter Your Choice: ");
+		scanf(" %d", &again);
+		if(again==1)
+		{
+			printf("\n\n");
+			nonVegetarian();
+		}
+		else if(again==2)
+		{
+			printf("          Your Total Amount Is: $%.2lf\n\n", total);
+			int totl = total;
+			FILE *ttl;
+			ttl = fopen("order.txt","a");
+			fprintf(ttl,"\nGrand Total: $%d\n", totl);
+			fclose(ttl);
+			details();
+		}
+	}
+	else if(choice==9)
 	{
 		system("cls");
 		customer();
@@ -539,9 +658,7 @@ void nonVegetarian(void)                    // Non Vegetarian Function
 
 void beverages(void)                    // Beverages Function
 {
-    int choice;
-	int again;
-	int quantity;
+    int choice, again, quantity;
 	double price=0;
 	printf("                                    **********************************************\n");
 	printf("                                                  Beverage Menu\n");
@@ -549,21 +666,21 @@ void beverages(void)                    // Beverages Function
      //	Display Menu Items From Beverages File
 	char n;
 	FILE *nmenu;
-	nmenu = fopen("beverages.txt","rt");
+	nmenu = fopen("beverages.txt", "rt");
 	while((n=getc(nmenu))!=EOF)
 	{
-		printf("%c",n);
+		printf("%c", n);
 	}
 	printf("\n\n          Enter What You Want: ");
 	scanf("%d",&choice);
 	if(choice==1)
 	{
 		printf("          Quantity: ");
-		scanf(" %d",&quantity);
+		scanf(" %d", &quantity);
 		total=total + 100*(quantity);
 		printf("\n");
 		printf("          Press 1 To Order Again :\n          Press 2 To Get Your Total:\n\n          Enter Your Choice: ");
-		scanf(" %d",&again);
+		scanf(" %d", &again);
 		if(again==1)
 		{
 			printf("\n\n");
@@ -571,11 +688,11 @@ void beverages(void)                    // Beverages Function
 		}
 		else if(again==2)
 		{
-			printf("          Your Total Amount Is: $%.2lf\n\n",total);
+			printf("          Your Total Amount Is: $%.2lf\n\n", total);
 			int totl = total;
 			FILE *ttl;
-			ttl = fopen("order.txt","a");
-			fprintf(ttl,"\nGrand Total: $%d\n",totl);
+			ttl = fopen("order.txt", "a");
+			fprintf(ttl,"\nGrand Total: $%d\n", totl);
 			fclose(ttl);
 			details();
 		}
@@ -583,11 +700,11 @@ void beverages(void)                    // Beverages Function
 	else if(choice==2)
 	{
 		printf("          Quantity: ");
-		scanf(" %d",&quantity);
+		scanf(" %d", &quantity);
 		total=total + 120*(quantity);
 		printf("\n");
 		printf("          Press 1 To Order Again :\n          Press 2 To Get Your Total:\n\n          Enter Your Choice: ");
-		scanf(" %d",&again);
+		scanf(" %d", &again);
 		if(again==1)
 		{
 			printf("\n\n");
@@ -595,11 +712,11 @@ void beverages(void)                    // Beverages Function
 		}
 		else if(again==2)
 		{
-			printf("          Your Total Amount Is: $%.2lf\n\n",total);
+			printf("          Your Total Amount Is: $%.2lf\n\n", total);
 			int totl = total;
 			FILE *ttl;
 			ttl = fopen("order.txt","a");
-			fprintf(ttl,"\nGrand Total: $%d\n",totl);
+			fprintf(ttl,"\nGrand Total: $%d\n", totl);
 			fclose(ttl);
 			details();
 		}
@@ -607,11 +724,11 @@ void beverages(void)                    // Beverages Function
 	else if(choice==3)
 	{
 		printf("          Quantity :");
-		scanf(" %d",&quantity);
+		scanf(" %d", &quantity);
 		total=total + 85*(quantity);
 		printf("\n");
 		printf("          Press 1 To Order Again :\n          Press 2 To Get Your Total:\n\n          Enter Your Choice: ");
-		scanf(" %d",&again);
+		scanf(" %d", &again);
 		if(again==1)
 		{
 			printf("\n\n");
@@ -619,11 +736,11 @@ void beverages(void)                    // Beverages Function
 		}
 		else if(again==2)
 		{
-			printf("          Your Total Amount Is: $%.2lf\n\n",total);
+			printf("          Your Total Amount Is: $%.2lf\n\n", total);
 			int totl = total;
 			FILE *ttl;
-			ttl = fopen("order.txt","a");
-			fprintf(ttl,"\nGrand Total: $%d\n",totl);
+			ttl = fopen("order.txt", "a");
+			fprintf(ttl,"\nGrand Total: $%d\n", totl);
 			fclose(ttl);
 			details();
 		}
@@ -632,7 +749,7 @@ void beverages(void)                    // Beverages Function
 	{
 		printf("          Quantity :");
 		scanf(" %d",&quantity);
-		total=total + 35*(quantity);
+		total = total + 35*(quantity);
 		printf("\n");
 		printf("          Press 1 To Order Again :\n          Press 2 To Get Your Total:\n\n          Enter Your Choice: ");
 		scanf(" %d",&again);
@@ -643,11 +760,11 @@ void beverages(void)                    // Beverages Function
 		}
 		else if(again==2)
 		{
-			printf("          Your Total Amount Is: $%.2lf\n\n",total);
+			printf("          Your Total Amount Is: $%.2lf\n\n", total);
 			int totl = total;
 			FILE *ttl;
 			ttl = fopen("order.txt","a");
-			fprintf(ttl,"\nGrand Total: $%d\n",totl);
+			fprintf(ttl,"\nGrand Total: $%d\n", totl);
 			fclose(ttl);
 			details();
 		}
@@ -659,36 +776,34 @@ void beverages(void)                    // Beverages Function
 	}
 	else
 	{
-		printf("Wrong Input! Re-enter THe Correct Option\n\n");
+		printf("Wrong Input! Re-enter The Correct Option\n\n");
 		beverages();
 	}
 }
 
-void details(void)                    // Customer Details
+void details(void)              // Customer Details
 {
-	char name1[20];
-	char name2[20];
+	char name1[20], name2[20];
 	long long int phone;
-	char address[40];
-	char landmark[30];
-	printf("Please Give Your Contact Details \n");
-	printf(" First Name : ");
-	scanf("%s",name1);
-	printf("Last Name : ");
-	scanf("%s",name2);
-	printf("Phone : ");
+	char address[40], landmark[30];
+	printf("       Please Give Your Contact Details \n");
+	printf("       First Name : ");
+	scanf("%s", name1);
+	printf("       Last Name : ");
+	scanf("%s", name2);
+	printf("       Phone : ");
 	scanf("%lld",&phone);
-	printf("Address : ");
-	scanf("%s",address);
-	printf("Landmark : ");
-	scanf("%s",landmark);
+	printf("       Address : ");
+	scanf("%s", address);
+	printf("       Landmark : ");
+	scanf("%s", landmark);
 	printf("\n\n");
-	printf("Your Entered Details Are --->\n");
+	printf("       Your Entered Details Are:....\n");
 	FILE *cust;
 	cust = fopen("order.txt","a");
-	fprintf(cust,"Order Placed By : %s %s\nPhone number : %lld\n",name1,name2,phone);
+	fprintf(cust,"Order Placed By : %s %s\nPhone number : %lld\n", name1, name2, phone);
 	fclose(cust);
-	printf("    -->First Name :  %s\n    -->Last Name   :  %s\n    -->Phone     :%lld \n    -->Address  :%s \n    -->Landmark  :%s \n",name1,name2,phone,address,landmark);
+	printf("    --> First Name :  %s\n    --> Last Name   :  %s\n    --> Phone     :%lld \n    --> Address  :%s \n    --> Landmark  :%s \n", name1, name2, phone, address, landmark);
 	printf("\n\n\n");
 	printf("                       *********************************************************************************************\n");
 	printf("                                             Your Order Will Be At Your Door In 30 minutes.\n");
@@ -720,7 +835,7 @@ bool password(void)     // Password Function
 int checkid(int c)  //check whether the record is exist in list or not
 {
 	rewind(fp);
-	while(fread(&emp,sizeof(emp),1,fp)==1)
+	while(fread(&emp, sizeof(emp), 1, fp)==1)
 	if(emp.id==c)
 
 	return 0;  //returns 0 if employee exits
@@ -732,7 +847,7 @@ int getData()
 {
 	//*int t;
 	printf("        Employee ID :\t");
-	scanf("%d",&t);
+	scanf("%d", &t);
 	if(checkid(t)==0)
 	{
 		printf("\n\n");
@@ -741,11 +856,11 @@ int getData()
 		mainMenu();
 		return 0;
 	}
-	emp.id=t;
+	emp.id = t;
 	printf("        Employee Name : ");
-	scanf("%s",emp.name);
+	scanf("%s", emp.name);
 	printf("        Department :");
-	scanf("%s",emp.department);
+	scanf("%s", emp.department);
 	return 1;
 }
 
